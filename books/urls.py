@@ -1,8 +1,7 @@
 from django.urls import path
-from django.contrib import admin
-
 
 from . import views
+
 
 urlpatterns = [
     path("", views.IndexView.as_view(), name="index"),
@@ -14,3 +13,4 @@ urlpatterns = [
     path("currently_reading/", views.CurrentlyReadingView.as_view(), name="currently-reading"),
     path("have_read/", views.HaveReadView.as_view(), name="have-read"),
 ]
+
