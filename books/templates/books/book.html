@@ -1,0 +1,22 @@
+<h1><a href="{% url 'index' %}">ScottReads</a></h1>
+
+<h1><a href="{% url 'book-list' %}">Books</a></h1>
+
+<h2>{{ object.title }}</h2>
+
+
+{% if object.subtitle %}
+    <p>{{ object.subtitle }}</p>
+{% endif %}
+
+
+{% for author in object.author.all %}
+    <strong><a href="{% url 'author-detail' author.id %}">{{ author }}</a>,</strong>
+{% endfor %}
+
+
+<ul>
+    <li>published: {{ object.pub_date }}</li>
+    <li>pages: {{ object.page_count }}</li>
+    <li>read: {{ object.have_read }}</li>
+</ul>

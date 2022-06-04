@@ -1,0 +1,13 @@
+<h1><a href="{% url 'index' %}">ScottReads</a></h1>
+
+<h1><a href="{% url 'author-list' %}">Authors</a></h1>
+
+<h2>{{ object.name }}</h2>
+
+
+<ul>
+{% for book in object.book.all %}
+    <li><a href="{% url 'book-detail' book.id %}">{{ book }}</a></li>
+{% endfor %}
+<ul>
+
