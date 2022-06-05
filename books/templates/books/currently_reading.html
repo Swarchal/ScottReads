@@ -4,6 +4,6 @@
 
 <ul>
     {% for book in object_list %}
-    <li><a href="{% url 'book-detail' book.id %}">{{ book.book.title }}</a></li>
+    <li><a href="{% url 'book-detail' book.book.id %}">{{ book.book.title }}</a></li>
     {% endfor %}
 </ul>
