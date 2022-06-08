@@ -47,8 +47,8 @@ class ToReadView(generic.ListView):
 
 
 class HaveReadView(generic.ListView):
-    model = models.Book
+    model = models.Reading
     template_name = "books/have_read.html"
 
     def get_queryset(self):
-        return models.Book.objects.filter(have_read=True)
+        return models.Reading.objects.filter(finished_date__isnull=False).order_by("finished_date")

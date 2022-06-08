@@ -2,8 +2,15 @@
 
 <h1>Have Read</h1>
 
-<ul>
+<ol>
     {% for book in object_list %}
-    <li><a href="{% url 'book-detail' book.id %}">{{ book }}</a></li>
+    <li>
+        <a href="{% url 'book-detail' book.id %}">
+            <strong>{{ book.book.title }}</strong> -
+            {% for author in book.book.author.all %}
+                <i>{{ author.first_name}} {{ author.last_name }},</i>
+            {% endfor %}
+        </a>
+    </li>
     {% endfor %}
-</ul>
+</ol>

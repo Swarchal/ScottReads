@@ -35,7 +35,7 @@ class Book(models.Model):
     isbn = models.CharField(max_length=100, blank=True, null=True)
     page_count = models.IntegerField(blank=True, null=True)
     blurb = models.TextField(blank=True, null=True)
-    genre = models.ManyToManyField(Genre, blank=True, null=True)
+    genre = models.ManyToManyField(Genre, blank=True)
     have_read = models.BooleanField(default=False)
 
     def __str__(self) -> str:
@@ -50,7 +50,7 @@ class Reading(models.Model):
     rating = models.FloatField(blank=True, null=True)
 
     def __str__(self) -> str:
-        return f"{self.book} {self.start_date}"
+        return f"{self.book}: {self.start_date} - {self.finished_date}"
 
     def has_finished(self) -> bool:
         return self.finished_date is not None
