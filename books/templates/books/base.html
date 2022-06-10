@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- CSS only -->
+<html>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <head>
+        <title>ScottReads</title>
+    </head>
+
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="{% url 'index' %}" class="nav-link px-2 text-secondary"><strong>ScottReads</strong></a></li>
+                <li><a href="{% url 'currently-reading' %}" class="nav-link px-2 text-white">Currently Reading</a></li>
+                <li><a href="{% url 'to-read' %}" class="nav-link px-2 text-white">To Read</a></li>
+                <li><a href="{% url 'have-read' %}" class="nav-link px-2 text-white">Have Read</a></li>
+                <li><a href="{% url 'book-list' %}" class="nav-link px-2 text-white">Books</a></li>
+                <li><a href="{% url 'author-list' %}" class="nav-link px-2 text-white">Authors</a></li>
+            </ul>
+
+            <div class="text-end">
+                <a href="{% url 'admin:index' %}" class="nav-link px-2 text-white">Admin</a>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <body>
+    {% block content %}
+    {% endblock content %}
+    </body>
+</html>
+

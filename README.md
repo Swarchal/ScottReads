@@ -5,5 +5,13 @@ GoodReads)*.
 
 
 - Django admin for CRUD stuff.
-- Plain HTML for display.
 - SQLite for database.
+
+
+## To run
+
+```bash
+docker-compose up --build -d
+```
+
+Runs on port `8787` by default.

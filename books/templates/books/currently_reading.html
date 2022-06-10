@@ -1,9 +1,24 @@
-<h1><a href="{% url 'index' %}">ScottReads</a></h1>
+{% extends "books/base.html" %}
+{% block content %}
 
-<h1>Currently Reading:</h1>
+<div class="container">
+
+
+<h2 class="mb-3 mt-3">Currently Reading:</h2>
 
 <ul>
     {% for book in object_list %}
-    <li><a href="{% url 'book-detail' book.book.id %}">{{ book.book.title }}</a></li>
+    <li>
+        <a class="text-dark" href="{% url 'book-detail' book.book.id %}">
+            <strong>{{ book.book.title }}</strong> - 
+            {% for author in book.book.author.all %}
+                <i>{{ author.name }}</i>,
+            {% endfor %}
+        </a>
+    </li>
     {% endfor %}
 </ul>
+
+</div>
+
+{% endblock %}

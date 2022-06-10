@@ -1,19 +1,5 @@
-<h1><a href="{% url 'index' %}">ScottReads</a></h1>
+{% extends "books/base.html" %}
+{% block content %}
 
 
-
-<h2><a href="{% url 'currently-reading' %}">Currently Reading</a></h2>
-<h2><a href="{% url 'to-read' %}">To Read</a></h2>
-<h2><a href="{% url 'have-read' %}">Have Read</a></h2>
-
-</br>
-
-<h2><a href="{% url 'book-list' %}">Books</a></h2>
-<h2><a href="{% url 'author-list' %}">Authors</a></h2>
-
-</br>
-</br>
-</br>
-
-
-<a href="{% url 'admin:index' %}">admin</a>
+{% endblock %}
