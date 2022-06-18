@@ -1,34 +1,58 @@
 <!DOCTYPE html>
-<!-- CSS only -->
 <html>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <head>
-        <title>ScottReads</title>
-    </head>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="UTF-8">
+<style>
+    html, body, tr, td, hr {
+        font-family: monospace;
+        background-color: #333333;
+        color: #EAC67A;
+    }
 
-    <header class="p-3 bg-dark text-white">
-        <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    article {
+        max-width: 800px;
+        margin: auto;
+    }
 
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="{% url 'index' %}" class="nav-link px-2 text-secondary"><strong>ScottReads</strong></a></li>
-                <li><a href="{% url 'currently-reading' %}" class="nav-link px-2 text-white">Currently Reading</a></li>
-                <li><a href="{% url 'to-read' %}" class="nav-link px-2 text-white">To Read</a></li>
-                <li><a href="{% url 'have-read' %}" class="nav-link px-2 text-white">Have Read</a></li>
-                <li><a href="{% url 'book-list' %}" class="nav-link px-2 text-white">Books</a></li>
-                <li><a href="{% url 'author-list' %}" class="nav-link px-2 text-white">Authors</a></li>
-            </ul>
+    a:link {
+        color: #EAC67A;
+    }
 
-            <div class="text-end">
-                <a href="{% url 'admin:index' %}" class="nav-link px-2 text-white">Admin</a>
-            </div>
+    a:visited {
+        color: #EAC67A;
+    }
+
+    a:active {
+        color: #EAC67A;
+    }
+
+    a:hover {
+        color: #ffffff
+    }
+</style>
+</head>
+<article>
+<header>
+    <div class="container">
+    <div class="d-flex flex-wrap">
+        <div class="col-12 col-lg-auto me-lg-auto">
+            <a href="{% url 'index' %}"><strong>ScottReads</strong></a>
+            <a href="{% url 'currently-reading' %}">Currently Reading</a>
+            <a href="{% url 'to-read' %}">To Read</a>
+            <a href="{% url 'have-read' %}">Have Read</a>
+            <a href="{% url 'book-list' %}">Books</a>
+            <a href="{% url 'author-list' %}">Authors</a>
+            <a href="{% url 'admin:index' %}">Admin </a>
         </div>
-        </div>
-    </header>
 
-    <body>
-    {% block content %}
-    {% endblock content %}
-    </body>
+    </div>
+    <hr/>
+</header>
+<body>
+{% block content %}
+{% endblock content %}
+</body>
+</article>
 </html>
 

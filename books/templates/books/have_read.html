@@ -3,12 +3,12 @@
 
 <div class="container">
 
-<h2 class="mb-3 mt-3">Have Read</h2>
+<h2>Have Read</h2>
 
 <ol>
     {% for book in object_list %}
     <li>
-        <a class="text-dark" href="{% url 'book-detail' book.id %}">
+        <a href="{% url 'book-detail' book.id %}">
             <strong>{{ book.book.title }}</strong> -
             {% for author in book.book.author.all %}
                 <i>{{ author.name }},</i>

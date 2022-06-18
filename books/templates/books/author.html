@@ -3,11 +3,11 @@
 {% block content %}
 
 <div class="container">
-<h2 class="mb-3 mt-3">{{ object.name }}</h2>
+<h2 >{{ object.name }}</h2>
 
 <ul>
 {% for book in object.book.all %}
-    <li><a class="text-dark" href="{% url 'book-detail' book.id %}">{{ book }}</a></li>
+    <li><a href="{% url 'book-detail' book.id %}">{{ book }}</a></li>
 {% endfor %}
 <ul>
 

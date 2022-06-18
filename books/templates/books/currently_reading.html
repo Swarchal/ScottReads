@@ -4,12 +4,12 @@
 <div class="container">
 
 
-<h2 class="mb-3 mt-3">Currently Reading:</h2>
+<h2>Currently Reading:</h2>
 
 <ul>
     {% for book in object_list %}
     <li>
-        <a class="text-dark" href="{% url 'book-detail' book.book.id %}">
+        <a href="{% url 'book-detail' book.book.id %}">
             <strong>{{ book.book.title }}</strong> - 
             {% for author in book.book.author.all %}
                 <i>{{ author.name }}</i>,

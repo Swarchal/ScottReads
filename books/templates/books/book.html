@@ -4,7 +4,7 @@
 
 <div class="container">
 
-<h2 class="mb-3 mt-3">{{ object.title }}</h2>
+<h2>{{ object.title }}</h2>
 
 
 {% if object.subtitle %}
@@ -13,7 +13,7 @@
 
 
 {% for author in object.author.all %}
-    <i><a class="text-dark" href="{% url 'author-detail' author.id %}">{{ author }}</a>,</i>
+    <i><a href="{% url 'author-detail' author.id %}">{{ author }}</a>,</i>
 {% endfor %}
 
 

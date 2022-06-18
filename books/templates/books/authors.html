@@ -3,11 +3,11 @@
 
 <div class="container">
 
-<h2 class="mb-3 mt-3">Authors</h2>
+<h2>Authors</h2>
 
 <ul>
     {% for author in object_list %}
-        <li><a class="text-dark" href="{% url 'author-detail' author.pk %}">{{ author.name }}</a></li>
+        <li><a href="{% url 'author-detail' author.pk %}">{{ author.name }}</a></li>
     {% endfor %}
 </ul>
 

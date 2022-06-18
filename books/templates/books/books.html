@@ -1,14 +1,14 @@
 {% extends "books/base.html" %}
 {% block content %}
 
-<div class="container mt-3">
+<div class="container">
 
-<h2 class="mb-3 mt-3">Books</h2>
+<h2>Books</h2>
 
 <ul>
     {% for book in object_list %}
         <li>
-            <a href="{% url 'book-detail' book.pk %}" class="text-dark">
+            <a href="{% url 'book-detail' book.pk %}">
                 <strong>{{ book.title }}</strong> - 
                 {% for author in book.author.all %}
                     <i>{{ author.name }}</i>,
