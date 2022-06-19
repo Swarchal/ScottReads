@@ -8,7 +8,7 @@
 <ol>
     {% for book in object_list %}
     <li>
-        <a href="{% url 'book-detail' book.id %}">
+        <a href="{% url 'book-detail' book.book.pk %}">
             <strong>{{ book.book.title }}</strong> -
             {% for author in book.book.author.all %}
                 <i>{{ author.name }},</i>
