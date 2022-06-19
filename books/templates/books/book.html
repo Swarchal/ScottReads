@@ -18,9 +18,14 @@
 
 
 <ul>
-    <li>published: {{ object.pub_date }}</li>
+    <li>published: {{ object.pub_date|date:"Y" }}</li>
     <li>pages: {{ object.page_count }}</li>
     <li>read: {{ object.have_read }}</li>
+    <li>genre: {% for genre in object.genre.all %} {{ genre.description }}, {% endfor %}</li>
+    <li>publisher: {{ object.publisher }}</li>
+    {% if object.isbn %}
+        <li>ISBN: {{ object.isbn }}</li>
+    {% endif %}
 </ul>
 
 </div>
