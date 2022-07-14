@@ -16,6 +16,9 @@
     <i><a href="{% url 'author-detail' author.id %}">{{ author }}</a>,</i>
 {% endfor %}
 
+{% if object.blurb %}
+    <p>{{ object.blurb }}</p>
+{% endif %}
 
 <ul>
     <li>published: {{ object.pub_date|date:"Y" }}</li>
@@ -26,6 +29,7 @@
     {% if object.isbn %}
         <li>ISBN: {{ object.isbn }}</li>
     {% endif %}
+
 </ul>
 
 </div>
