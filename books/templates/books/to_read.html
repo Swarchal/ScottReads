@@ -11,7 +11,11 @@
         <a href="{% url 'book-detail' book.id %}">
             <strong>{{ book }}</strong> -
             {% for author in book.author.all %}
-                <i> {{ author.name }}</i>,
+                {% if not forloop.last %}
+                    <i>{{ author.name }}</i>,
+                {% else %}
+                    <i>{{ author.name }}</i>
+                {% endif %}
             {% endfor %}
         </a>
     </li>
