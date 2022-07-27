@@ -8,12 +8,16 @@
 
 
 {% if object.subtitle %}
-    <p>{{ object.subtitle }}</p>
+    <p><strong>{{ object.subtitle }}</strong></p>
 {% endif %}
 
 
 {% for author in object.author.all %}
-    <i><a href="{% url 'author-detail' author.id %}">{{ author }}</a>,</i>
+    {% if not forloop.last %}
+        <i><a href="{% url 'author-detail' author.id %}">{{ author }}</a>,</i>
+    {% else %}
+        <i><a href="{% url 'author-detail' author.id %}">{{ author }}</a></i>
+    {% endif %}
 {% endfor %}
 
 {% if object.blurb %}
