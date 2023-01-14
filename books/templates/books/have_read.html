@@ -5,8 +5,11 @@
 
 <h2>Have Read</h2>
 
-<ol>
-    {% for book in object_list %}
+{% regroup object_list by finished_date|date:"Y" as books_by_year %}
+{% for year in books_by_year  reversed %}
+  <h3>{{ year.grouper }}</h3>
+  <ol>
+  {% for book in year.list %}
     <li>
         <a href="{% url 'book-detail' book.book.pk %}">
             <strong>{{ book.book.title }}</strong> -
@@ -19,9 +22,9 @@
             {% endfor %}
         </a>
     </li>
-    {% endfor %}
-</ol>
-
+  {% endfor %}
+  </ol>
+{% endfor %}
 </div>
 
 {% endblock %}
